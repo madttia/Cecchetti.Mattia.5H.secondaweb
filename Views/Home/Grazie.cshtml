@@ -1,0 +1,38 @@
+@model DBContext
+
+@{
+    
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Grazie</h1>
+    <h2>La tua prenotazione è avvenuta con successo</h2>
+    <h3>Ecco la tua prenotazione</h3>
+    <h4>Per cancellare tutti i dati @Html.ActionLink("clicca qui","CancellaTutto","Home",null,null)</h4>
+    
+  
+
+    <table class="table table-bordered table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>DataPrenotazione</th>
+            </tr>
+        </thead>
+            
+        <tbody>
+            @foreach (Prenotazione p  in Model.Prenotazioni)
+            {
+                <tr>
+                    <td>@p.Nome</td> 
+                    <td>@p.Email</td> 
+                    <td>@Html.ActionLink("cancella","Cancella","Home",new {id=p.PrenotazioneId},null)</td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+</div>
