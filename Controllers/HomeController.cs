@@ -125,7 +125,8 @@ namespace Cecchetti.Mattia._5H.SecondaWeb.Controllers
             }
             return View();
         }
-
+        
+        [Authorize]
         [Authorize]
         public IActionResult Privacy()
         {
@@ -138,11 +139,14 @@ namespace Cecchetti.Mattia._5H.SecondaWeb.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
         
+        [Authorize]
         [HttpGet]
         public IActionResult Prenota()
         {
             return View();
         }
+        
+        [Authorize]
         [HttpGet]
         public IActionResult Elenco()
         {
