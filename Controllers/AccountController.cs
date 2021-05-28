@@ -86,7 +86,8 @@ namespace Cecchetti.Mattia._5H.SecondaWeb.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
-
+        
+    [Authorize]
         [HttpGet] 
         public IActionResult Upload()
         {
@@ -96,7 +97,8 @@ namespace Cecchetti.Mattia._5H.SecondaWeb.Controllers
             }
             return RedirectToAction("Accedi", "Account"); 
         }
-
+     
+    [Authorize]
         [HttpGet]
         public IActionResult Privacy()
         {
@@ -106,7 +108,8 @@ namespace Cecchetti.Mattia._5H.SecondaWeb.Controllers
             }
             return RedirectToAction("Accedi", "Account"); 
         }
-
+        
+    [Authorize]
         [HttpGet]
         public IActionResult Elenco()
         {
@@ -117,7 +120,8 @@ namespace Cecchetti.Mattia._5H.SecondaWeb.Controllers
             }
             return RedirectToAction("Accedi", "Account");        
         }
-
+        
+    [Authorize]
         [HttpGet]
         public IActionResult Prenota()
         {
